@@ -41,6 +41,13 @@ main {
     display: block; /* activeクラスが付与された画面のみ表示 */
 }
 
+form {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
 form label {
     display: inline-block;
     width: 150px;
@@ -67,8 +74,19 @@ form button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    margin-right: 10px; /* ボタン間のスペース */
 }
 
 form button:hover {
     background-color: #0056b3;
+}
+
+#loginScreen button#showRegisterFormButton,
+#loginScreen button#hideRegisterFormButton {
+    background-color: #6c757d; /* グレー系の色 */
+}
+
+#loginScreen button#showRegisterFormButton:hover,
+#loginScreen button#hideRegisterFormButton:hover {
+    background-color: #5a6268;
 }

@@ -10,9 +10,9 @@
         <h1>社内管理ツール</h1>
         <nav>
             <button id="navLogin">ログイン</button>
-            <button id="navSubscription">定期購入</button>
-            <button id="navMonthlyDoc">月末書類</button>
-            <button id="navAddressChange">住所変更</button>
+            <button id="navSubscription" style="display:none;">定期購入</button>
+            <button id="navMonthlyDoc" style="display:none;">月末書類</button>
+            <button id="navAddressChange" style="display:none;">住所変更</button>
             <button id="navLogout" style="display:none;">ログアウト</button>
         </nav>
     </header>
@@ -20,18 +20,31 @@
     <main>
         <section id="loginScreen" class="screen active">
             <h2>ログイン</h2>
-            <form>
-                <label for="username">ユーザー名:</label>
-                <input type="text" id="username" name="username"><br><br>
-                <label for="password">パスワード:</label>
-                <input type="password" id="password" name="password"><br><br>
+            <form id="loginForm">
+                <label for="loginUsername">ユーザー名:</label>
+                <input type="text" id="loginUsername" name="loginUsername" required><br><br>
+                <label for="loginPassword">パスワード:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required><br><br>
                 <button type="submit" id="loginButton">ログイン</button>
+                <button type="button" id="showRegisterFormButton">新規アカウント作成</button>
             </form>
+
+            <div id="registerFormContainer" style="display:none;">
+                <h3>新規アカウント作成</h3>
+                <form id="registerForm">
+                    <label for="registerUsername">新しいユーザー名:</label>
+                    <input type="text" id="registerUsername" name="registerUsername" required><br><br>
+                    <label for="registerPassword">新しいパスワード:</label>
+                    <input type="password" id="registerPassword" name="registerPassword" required><br><br>
+                    <button type="submit" id="registerButton">アカウント作成</button>
+                    <button type="button" id="hideRegisterFormButton">キャンセル</button>
+                </form>
+            </div>
         </section>
 
         <section id="subscriptionScreen" class="screen">
             <h2>定期購入情報</h2>
-            <form>
+            <form id="subscriptionForm">
                 <label for="purchaseDate">定期購入日:</label>
                 <input type="date" id="purchaseDate" name="purchaseDate"><br><br>
 
@@ -56,7 +69,7 @@
 
         <section id="monthlyDocScreen" class="screen">
             <h2>月末書類</h2>
-            <form>
+            <form id="monthlyDocForm">
                 <label for="submissionDateMonthly">提出日:</label>
                 <input type="date" id="submissionDateMonthly" name="submissionDateMonthly"><br><br>
 
@@ -69,7 +82,7 @@
 
         <section id="addressChangeScreen" class="screen">
             <h2>住所変更</h2>
-            <form>
+            <form id="addressChangeForm">
                 <label for="submissionDateAddress">提出日:</label>
                 <input type="date" id="submissionDateAddress" name="submissionDateAddress"><br><br>
 
