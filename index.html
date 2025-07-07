@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内管理ツール</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <h1>社内管理ツール</h1>
+        <nav>
+            <button id="navLogin">ログイン</button>
+            <button id="navSubscription">定期購入</button>
+            <button id="navMonthlyDoc">月末書類</button>
+            <button id="navAddressChange">住所変更</button>
+            <button id="navLogout" style="display:none;">ログアウト</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="loginScreen" class="screen active">
+            <h2>ログイン</h2>
+            <form>
+                <label for="username">ユーザー名:</label>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">パスワード:</label>
+                <input type="password" id="password" name="password"><br><br>
+                <button type="submit" id="loginButton">ログイン</button>
+            </form>
+        </section>
+
+        <section id="subscriptionScreen" class="screen">
+            <h2>定期購入情報</h2>
+            <form>
+                <label for="purchaseDate">定期購入日:</label>
+                <input type="date" id="purchaseDate" name="purchaseDate"><br><br>
+
+                <label for="nearestStation">最寄駅:</label>
+                <input type="text" id="nearestStation" name="nearestStation"><br><br>
+
+                <label for="destinationStation">目的駅:</label>
+                <input type="text" id="destinationStation" name="destinationStation"><br><br>
+
+                <label for="transitStation">経由駅:</label>
+                <input type="text" id="transitStation" name="transitStation"><br><br>
+
+                <label for="commuteTime">通勤時間 (分):</label>
+                <input type="number" id="commuteTime" name="commuteTime"><br><br>
+
+                <label for="monthlyFare">定期購入金額 (1ヵ月):</label>
+                <input type="number" id="monthlyFare" name="monthlyFare"><br><br>
+
+                <button type="submit" id="saveSubscription">保存</button>
+            </form>
+        </section>
+
+        <section id="monthlyDocScreen" class="screen">
+            <h2>月末書類</h2>
+            <form>
+                <label for="submissionDateMonthly">提出日:</label>
+                <input type="date" id="submissionDateMonthly" name="submissionDateMonthly"><br><br>
+
+                <label for="monthlyFileUpload">添付ファイルアップロード:</label>
+                <input type="file" id="monthlyFileUpload" name="monthlyFileUpload"><br><br>
+
+                <button type="submit" id="uploadMonthlyDoc">提出</button>
+            </form>
+        </section>
+
+        <section id="addressChangeScreen" class="screen">
+            <h2>住所変更</h2>
+            <form>
+                <label for="submissionDateAddress">提出日:</label>
+                <input type="date" id="submissionDateAddress" name="submissionDateAddress"><br><br>
+
+                <label for="zipCode">郵便番号:</label>
+                <input type="text" id="zipCode" name="zipCode" pattern="\d{3}-\d{4}" placeholder="例: 123-4567"><br><br>
+
+                <label for="newAddress">新住所 (都道府県、市区町村):</label>
+                <input type="text" id="newAddress" name="newAddress"><br><br>
+
+                <label for="addressDetails">番地以降 (マンション名など):</label>
+                <input type="text" id="addressDetails" name="addressDetails"><br><br>
+
+                <label for="nearestStationAddress">最寄駅:</label>
+                <input type="text" id="nearestStationAddress" name="nearestStationAddress"><br><br>
+
+                <label>住民票転居届:</label>
+                <input type="radio" id="residentMovingSubmitted" name="residentMoving" value="提出済">
+                <label for="residentMovingSubmitted">提出済</label>
+                <input type="radio" id="residentMovingPending" name="residentMoving" value="未提出">
+                <label for="residentMovingPending">未提出</label><br><br>
+
+                <button type="submit" id="saveAddressChange">保存</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
